@@ -1,0 +1,17 @@
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+generator:
+  name: "NewRugArchiveProject"
+  group: "atomist-rugs"
+  artifact: "rug-archive"
+  version: "0.11.0"
+  origin:
+    repo: "https://github.com/atomist-rugs/rug-archive.git"
+    branch: "a881183f4382aa17443b589213889902d2ae69ac"
+    sha: "a881183"
+  parameters:
+    - "group_id": "atomist-rugs"
+    - "description": "Rug archive project generator."
+    - "project_name": "rug-project"
+
