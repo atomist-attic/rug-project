@@ -43,3 +43,19 @@ editor:
   parameters:
     - "repo_slug": "atomist-rugs/rug-project"
 
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+editor:
+  name: "UpdateRugVersion"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.11.0"
+  origin:
+    repo: "https://github.com/atomist-rugs/rug-editors.git"
+    branch: "e9ca71094a8d4ba91783b9b00478e3d4741b0e33"
+    sha: "e9ca710"
+  parameters:
+    - "manifest_version": "[0.12.0,1.0.0)"
+    - "package_version": "0.12.0"
+
