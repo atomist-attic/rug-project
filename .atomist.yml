@@ -15,3 +15,16 @@ generator:
     - "description": "Rug archive project generator."
     - "project_name": "rug-project"
 
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+editor:
+  name: "atomist-rugs.common-editors.AddApacheSoftwareLicense20"
+  group: "atomist-rugs"
+  artifact: "common-editors"
+  version: "0.7.0"
+  origin:
+    repo: "atomist-rugs/common-editors.git"
+    branch: "master"
+    sha: "622ed10"
+
