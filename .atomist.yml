@@ -92,3 +92,19 @@ editor:
     - "maven_user": "t************h"
     - "maven_token": "A***********************************************************************i"
 
+---
+kind: "operation"
+client: "rug-cli 0.24.0"
+editor:
+  name: "AddTypeScriptGenerator"
+  group: "atomist-rugs"
+  artifact: "rug-editors"
+  version: "0.11.0"
+  origin:
+    repo: "https://github.com/atomist-rugs/rug-editors.git"
+    branch: "e9ca71094a8d4ba91783b9b00478e3d4741b0e33"
+    sha: "e9ca710"
+  parameters:
+    - "generator_name": "NewRugProject"
+    - "description": "Generate new Rug archive project"
+

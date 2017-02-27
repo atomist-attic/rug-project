@@ -1,0 +1,12 @@
+scenario NewRugProject should create a new project based on this archive
+
+let project_name = "my-project-name"
+
+given
+  Empty
+
+when
+  NewRugProject
+
+then
+  fileExists "README.md"
