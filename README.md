@@ -1,35 +1,37 @@
-# rug-project
+# Atomist 'rug-project'
 
 [![Build Status](https://travis-ci.org/atomist-rugs/rug-project.svg?branch=master)](https://travis-ci.org/atomist-rugs/rug-project)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
-This [Rug][rug] archive contains Rug archive project generator.
+This [Rug][rug] project contains a Rug archive project generator.
 
 [rug]: http://docs.atomist.com/
 
-After you create a project with this generator, you may enjoy the compatible editors in [atomist-rugs:rug-editors](https://github.com/atomist-rugs/rug-editors).
+After you create a project with this generator, you may enjoy the
+compatible editors in [atomist-rugs:rug-editors][rug-editors].
+
+[rug-editors]: https://github.com/atomist-rugs/rug-editors
 
 ## Rugs
 
-### AddReadme
+### NewRugProject
 
-The AddReadme editor adds a GitHub-like `README.md` to a project.
+The NewRugProject generator creates a new Rug archive project.
 
 #### Prerequisites
 
-Before running this editor, you must have the following prerequisites
-satisfied.
-
-*   A source code repository
+There are no prerequisites to running this generator.
 
 #### Parameters
 
-To run this editor, you must supply the following parameters.
+To run this generator, you must supply the following parameters.
 
 Name | Required | Default | Description
 -----|----------|---------|------------
-`project_name` | Yes | | A valid GitHub repository name.
-`description` | No | My new project | A brief description of the project between 1 and 100 characters.
+`project_name` | Yes | |  A valid GitHub repository name, which contains alphanumberic, _, and - characters
+`group_id` | Yes | |  Maven group ID, e.g., "company-rugs", typically the GitHub owner of the repo being created is used
+`description` | Yes | | A brief description of the project
+`version` | No | 0.1.0 | [Semantic version][semver] of the project
 
 [semver]: http://semver.org
 
@@ -38,15 +40,21 @@ Name | Required | Default | Description
 Run it as follows:
 
 ```
-$ cd to/the/repo
-$ rug edit atomist-rugs:rug-project:AddReadme \
-    project_name=fun-project \
-    description='A project that needs a README'
+$ cd parent/directory
+$ rug generate atomist-rugs:rug-archive:NewRugProject \
+    ruggery \
+    group_id=persian-rugs \
+    description="Rug archive to hold my Rugs" \
+    version=0.1.0
 ```
 
-This will create a simple `README.md` file in the top-level directory
-of the source code repository.  If you are happy with the change,
-commit the changes.
+Note the first parameter, the `project_name`, is different in that you
+do not need to supply the name of the parameter, just the value.  This
+is because the `project_name` parameter is required for all
+generators.  This will create a directory named `ruggery` and populate
+it with a working Rug archive project.
+
+See the README in the generated project for further instructions.
 
 ## Support
 

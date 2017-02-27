@@ -9,13 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [Unreleased]: https://github.com/atomist-rugs/rug-project/compare/0.1.0...HEAD
 
-## [0.1.0] - 2017-01-01
+## [0.1.0] - 2017-02-27
 
 [0.1.0]: https://github.com/atomist-rugs/rug-project/tree/0.1.0
 
 Initial release
 
 ### Added
+
+-   Working version of NewRugProject generator
 
 -   CHANGELOG file
 
