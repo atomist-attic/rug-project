@@ -15,11 +15,13 @@
  */
 
 import { PopulateProject } from '@atomist/rug/operations/ProjectGenerator'
-import { Project } from '@atomist/rug/model/Core'
+import { Project } from '@atomist/rug/model/Project'
 import { Pattern } from '@atomist/rug/operations/RugOperation'
 import { Generator, Parameter, Tags } from '@atomist/rug/operations/Decorators'
 import { PathExpression, PathExpressionEngine } from '@atomist/rug/tree/PathExpression'
 import { File } from '@atomist/rug/model/File'
+
+import { removeUnnecessaryFiles, cleanReadMe } from './RugGeneratorFunctions'
 
 @Generator("NewRugProject", "Generate new Rug archive project")
 @Tags("rug", "atomist")
@@ -44,7 +46,7 @@ class NewRugProject implements PopulateProject {
         minLength: 1,
         maxLength: 100
     })
-    group_id: string;
+    owner: string;
 
     @Parameter({
         displayName: "Project Description",
@@ -69,29 +71,17 @@ class NewRugProject implements PopulateProject {
 
     populate(project: Project) {
         let toRemove: string[] = [
-            ".atomist.yml",
-            ".travis.yml",
             "CHANGELOG.md",
             "CODE_OF_CONDUCT.md",
             "LICENSE"
         ];
-        for (let f of toRemove) {
-            project.deleteFile(f);
-        }
+        removeUnnecessaryFiles(project, toRemove);
 
-        let eng: PathExpressionEngine = project.context().pathExpressionEngine();
-
-        let readmePE = new PathExpression<Project, File>("/*[@name='README.md']");
-        let readme: File = eng.scalar(project, readmePE);
-        readme.replace("# Atomist 'rug-project'", "# " + this.project_name);
-        readme.regexpReplace("a Rug archive project generator.[\\s\\S]*?\n## Rugs\n", this.description + "\n\n## Rugs\n");
-        readme.regexpReplace("\n### NewRugProject[\\s\\S]*\n## Support\n", "\n## Support\n");
-        readme.replace("rug-project", this.project_name);
-        readme.replace("atomist-rugs", this.group_id);
+        cleanReadMe(project, this.project_name, this.description, this.owner);
 
         let params = {
             archive_name: this.project_name,
-            group_id: this.group_id,
+            group_id: this.owner,
             version: this.version
         }
         project.editWith("AddManifestYml", params);

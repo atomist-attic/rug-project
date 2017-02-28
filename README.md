@@ -7,8 +7,8 @@ This [Rug][rug] project contains a Rug archive project generator.
 
 [rug]: http://docs.atomist.com/
 
-After you create a project with this generator, you may enjoy the
-compatible editors in [atomist-rugs:rug-editors][rug-editors].
+After you create a project with one of these generators, you may enjoy
+the compatible editors in [atomist-rugs:rug-editors][rug-editors].
 
 [rug-editors]: https://github.com/atomist-rugs/rug-editors
 
@@ -33,8 +33,6 @@ Name | Required | Default | Description
 `description` | Yes | | A brief description of the project
 `version` | No | 0.1.0 | [Semantic version][semver] of the project
 
-[semver]: http://semver.org
-
 #### Running
 
 Run it as follows:
@@ -54,7 +52,44 @@ is because the `project_name` parameter is required for all
 generators.  This will create a directory named `ruggery` and populate
 it with a working Rug archive project.
 
-See the README in the generated project for further instructions.
+See the Rugs available in [atomist-rugs:rug-editors][rug-editors] to
+add further functionality to your new Rug project.
+
+### NewStarterRugProject
+
+The NewStarterRugProject generator creates a new Rug archive project
+using a standard layout, sensible defaults, and a simple TypeScript
+editor.  It is a great way to get started writing Rugs!
+
+#### Prerequisites
+
+There are no prerequisites to running this generator.
+
+#### Parameters
+
+To run this generator, you must supply the following parameters.
+
+Name | Required | Default | Description
+-----|----------|---------|------------
+`project_name` | Yes | |  A valid GitHub repository name, which contains alphanumberic, _, and - characters
+
+#### Running
+
+Run it as follows:
+
+```
+$ cd parent/directory
+$ rug generate atomist-rugs:rug-archive:NewStarterRugProject ruggery
+```
+
+Note the `project_name` parameter is different in that you do not need
+to supply the name of the parameter, just the value.  This is because
+the `project_name` parameter is required for all generators.  This
+will create a directory named `ruggery` and populate it with a working
+Rug archive project with a standard layout and a simple editor.
+
+See the Rugs available in [atomist-rugs:rug-editors][rug-editors] to
+add further functionality to your new Rug project.
 
 ## Support
 
