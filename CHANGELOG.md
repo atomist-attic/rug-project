@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 [Unreleased]: https://github.com/atomist-rugs/rug-project/compare/0.2.0...HEAD
 
+### Changed
+
+- Artifact id from `rug-archive` to `rug-project` in README as per `manifest.yml`
+
 ## [0.2.0] - 2017-02-28
 
 [0.2.0]: https://github.com/atomist-rugs/rug-project/compare/0.1.0...0.2.0
