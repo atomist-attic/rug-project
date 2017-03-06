@@ -51,6 +51,7 @@ then
     and fileContains "README.md" "[![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)"
     and { !result.fileContains("README.md", "### NewRugProject") }
     and { !result.fileContains("README.md", "ruggery") }
+    and fileContains "README.md" "[rug]: http://docs.atomist.com/"
     and fileContains "README.md" "## Support"
     and fileContains "README.md" "## Development"
     and fileContains "README.md" { "---\nCreated by [Atomist][atomist]." }
