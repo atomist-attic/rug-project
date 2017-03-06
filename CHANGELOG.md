@@ -7,11 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-[Unreleased]: https://github.com/atomist-rugs/rug-project/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/atomist-rugs/rug-project/compare/0.2.1...HEAD
+
+## [0.2.1] - 2017-03-06
+
+[0.2.1]: https://github.com/atomist-rugs/rug-project/compare/0.2.0...0.2.1
+
+Fixer upper release
 
 ### Changed
 
-- Artifact id from `rug-archive` to `rug-project` in README as per `manifest.yml`
+-   Artifact id from `rug-archive` to `rug-project` in README
+
+### Fixed
+
+-   Rug link in generated README
 
 ## [0.2.0] - 2017-02-28
 
