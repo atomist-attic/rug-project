@@ -3,9 +3,9 @@
 [![Build Status](https://travis-ci.org/atomist-rugs/rug-project.svg?branch=master)](https://travis-ci.org/atomist-rugs/rug-project)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
-This [Rug][rug] project contains a Rug archive project generator.
-
 [rug]: http://docs.atomist.com/
+
+This [Rug][rug] project contains a Rug archive project generator.
 
 After you create a project with one of these generators, you may enjoy
 the compatible editors in [atomist-rugs:rug-editors][rug-editors].
