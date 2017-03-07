@@ -1,5 +1,7 @@
 # Atomist 'rug-project'
 
+**DEPRECATED:** these generators have moved to https://github.com/atomist-rugs/rug-editors
+
 [![Build Status](https://travis-ci.org/atomist-rugs/rug-project.svg?branch=master)](https://travis-ci.org/atomist-rugs/rug-project)
 [![Slack Status](https://join.atomist.com/badge.svg)](https://join.atomist.com)
 
